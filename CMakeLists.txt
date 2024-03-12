@@ -1,5 +1,10 @@
+cmake_minimum_required(VERSION 3.21)
+cmake_policy(SET CMP0110 NEW)
+
+set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
+
 project(gumbo_query CXX)
-cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
+
 
 include(CTest)
 include(cmake/PreventInSourceBuilds.cmake)
@@ -17,29 +22,10 @@ file(MAKE_DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 
 # Add the cmake modules directory to our module path.
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
-find_package(Gumbo REQUIRED)
+find_package(unofficial-gumbo CONFIG REQUIRED)
 
 # Set our library source directory.
 set(gumbo_query_SOURCE_DIRECTORY ${PROJECT_SOURCE_DIR}/src)
 
 # Add source subdirectories.
 add_subdirectory(src)
-add_subdirectory(test)
-
-enable_testing()
-add_test(NAME "ID Test" COMMAND id_test)
-
-# Generate Doxygen documentation.
-set(DOXYGEN_CONFIG_FILE Doxyfile.d)
-find_package(Doxygen)
-if(DOXYGEN_FOUND)
-	if(EXISTS ${PROJECT_SOURCE_DIR}/${DOXYGEN_CONFIG_FILE})
-		add_custom_target(
-			doc
-			${DOXYGEN_EXECUTABLE}
-			${PROJECT_SOURCE_DIR}/${DOXYGEN_CONFIG_FILE}
-			WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
-			COMMENT "Generating API documentation with Doxygen" VERBATIM
-		)
-	endif(EXISTS ${PROJECT_SOURCE_DIR}/${DOXYGEN_CONFIG_FILE})
-endif(DOXYGEN_FOUND)

@@ -2,6 +2,9 @@
 # .gitignore file for gumbo-query #
 ###################################
 
+.idea
+cmake-build-debug
+
 #####
 # OS X temporary files that should never be committed
 #

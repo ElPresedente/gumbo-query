@@ -1,0 +1,8 @@
+{
+  "name" : "gumbo-query",
+  "version" : "1.0.0",
+  "dependencies" : [ {
+    "name" : "gumbo",
+    "version>=" : "0.10.1#6"
+  }]
+}
