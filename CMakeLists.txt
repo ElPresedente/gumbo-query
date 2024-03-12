@@ -5,6 +5,7 @@ set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
 
 project(gumbo_query CXX)
 
+include_directories(include)
 
 include(CTest)
 include(cmake/PreventInSourceBuilds.cmake)
