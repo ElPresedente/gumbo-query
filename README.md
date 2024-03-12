@@ -1,5 +1,8 @@
+Fork of qumbo-query to make it work with vcpkg in a proper way. Requeres gumbo in vcpkg manifest.
+
+# original description
 # gumbo-query
-A C++ library that provides jQuery-like selectors for Google's Gumbo-Parser.
+A C++ library that provides jQuery-like selectors for Google's Gumbo-Parser. 
 
 Selector engine is an implementation based on [cascadia](https://github.com/andybalholm/cascadia).
 
