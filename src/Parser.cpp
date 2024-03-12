@@ -13,9 +13,9 @@
  *  
  **/
 
-#include <gumbo-query/Parser.h
-#include <gumbo-query/Selector.h
-#include <gumbo-query/QueryUtil.h
+#include <gumbo-query/Parser.h>
+#include <gumbo-query/Selector.h>
+#include <gumbo-query/QueryUtil.h>
 
 CParser::CParser(std::string aInput)
 {
