@@ -25,6 +25,8 @@ file(MAKE_DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
 find_package(unofficial-gumbo CONFIG REQUIRED)
 
+set(Gumbo_LIBRARY unofficial::gumbo::gumbo)
+
 # Set our library source directory.
 set(gumbo_query_SOURCE_DIRECTORY ${PROJECT_SOURCE_DIR}/src)
 
