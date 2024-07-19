@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.21)
 cmake_policy(SET CMP0110 NEW)
 
-set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
-
-project(gumbo_query CXX)
+if(NOT PROJECT_NAME AND NOT PROJECT_IS_TOP_LEVEL)
+    set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
+    message("Toolchain=${CMAKE_TOOLCHAIN_FILE}")
+    project(gumbo_query CXX)
+endif()
 
 include_directories(include)
 
