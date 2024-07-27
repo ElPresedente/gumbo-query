@@ -34,3 +34,5 @@ set(gumbo_query_SOURCE_DIRECTORY ${PROJECT_SOURCE_DIR}/src)
 
 # Add source subdirectories.
 add_subdirectory(src)
+
+target_include_directories(gumbo_query_static PUBLIC include)
